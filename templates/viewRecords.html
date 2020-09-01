@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="data-table">
+    <h3 style="text-align: center">Medical Records</h3>
+    <table id="viewUploadsTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead style="font-weight: bold">
+        <tr>
+            <th>Document Name</th>
+            <th>Description</th>
+            <th>Time uploaded</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>
+                    <a href="static/uploads/{{record.filePath}}"><span class="glyphicon glyphicon-file"></span></a>
+                    <a href="static/uploads/{{record.filePath}}">{{record.filePath}}</a>
+                </td>
+                <td>{{record.description}}</td>
+                <td>{{record.timestamp}}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm rounded-0" onclick="confirmDelete(this, '{{record.documentID}}')" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br><br>
+    To upload documents go to <a href="/uploadRecords">Upload Medical Records</a>
+    <br><br>
+    To share a document go to <a href="/shareRecords">Share Medical Records</a>
+</div>
+{% endblock content %}

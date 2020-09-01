@@ -1,0 +1,18 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="content-section" id="main-user-info">
+      <div class="media" id="account-pg">
+            <div style= "margin-left: 50px" class="media-body">
+              <p style="font-size: 40px"> <b>{{ current_user.username }}</b></p> <br><br>
+              <p> First Name: <b>{{ current_user.firstName }}</b></p> <br>
+              <p> Last Name: <b>{{current_user.lastName}}</b></p> <br>
+              <p> Date of Birth: <b>{{current_user.dob}}</b></p> <br>
+              <p> Sex: <b>{{current_user.sex}}</b></p> <br>
+              <p> Email: <b>{{current_user.email}}</b></p> <br><br><br>
+            </div>
+        </div>
+        <a class="btn btn-light" href="/account/edit" role="button">Edit Profile</a>
+    </div>
+{% endblock content %}

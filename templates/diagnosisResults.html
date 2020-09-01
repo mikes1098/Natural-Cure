@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="diagnosisResults">  
+	<h2>Hello {{name}}! These are your results:</h2>
+
+	<br> 
+	Sex: {{sex}}
+	
+	<br>
+	Age: {{age}}
+
+	<br><br>
+
+	<h3>Illness:</h3>
+	Most Likely: <b>{{diagOne}}</b>
+
+	{% if diagTwo %}
+		<br>
+		Lesser Likely: <b>{{diagTwo}}</b>
+		{% if diagThree %}
+			or <b>{{diagThree}}</b> 
+		{% endif %}
+	{% endif %}
+
+	<br><br>
+	<h3 style="margin-bottom: 20px;">Natural Treatments (for most likely illness):</h3>
+	{% if treatments %}
+		<ol>
+		    {% for result in treatments %}
+		        <li>
+		            {{ result.treatment }}
+		        </li>
+		        <ul>
+		            {% for option in result.options %}
+		                <li>
+		                    {{option}}
+		                </li>
+		            {% endfor %}
+		        </ul>
+		        <br>
+		    {% endfor %}
+		</ol>
+		For further treatment options please check our <a href="/resources">Health Resources</a> page
+		<br>
+	{% else %}
+		{{blank}}
+		You may also want to check our <a href="/resources">Health Resources</a> page. 
+		<b>If it is an emergency please go to your nearest hospital or call your local emergency number immediately!</b>
+		<br>
+	{% endif %}
+	<br>
+	To request another Diagnosis & Treatment session please click <a href="/diagnosis">here</a>
+	<br><br>
+	To check your previous Diagnosis & Treatment sessions history please click <a href="/diagnosisHistory">here</a>
+	<br><br><br>
+</div>
+
+{% endblock content %}
