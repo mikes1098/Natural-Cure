@@ -13,3 +13,8 @@ The goal of this project is to use the tools of computing and information techno
 # Methods/Technology
 HTML/CSS/JavaScript (front-end)  
 Python/SQL (back-end)
+
+![Demonstration Picture]((https://github.com/mikes1098/Natural-Cure/blob/master/demonstration/image1.png?raw=true))
+![Demonstration Picture]((https://github.com/mikes1098/Natural-Cure/blob/master/demonstration/image2.png?raw=true))
+![Demonstration Picture]((https://github.com/mikes1098/Natural-Cure/blob/master/demonstration/image3.png?raw=true))
+![Demonstration Picture]((https://github.com/mikes1098/Natural-Cure/blob/master/demonstration/image4.png?raw=true))
